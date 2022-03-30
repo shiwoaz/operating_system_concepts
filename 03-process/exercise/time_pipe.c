@@ -43,13 +43,11 @@ int main(int argc, char* argv[])
             if (i != argc - 1)
                 strcat(command, " ");
         }
-        printf("%s", command);
 
         struct timeval tv_start, tv_end;
         gettimeofday(&tv_start, NULL);
         system(command);
         gettimeofday(&tv_end, NULL);
-        printf("%.6f\n", convert_micosecond_to_second(&tv_end, &tv_start));
 
         char buffer[BUFFER_SIZE] = "";
         sprintf(buffer, "%.6f", convert_micosecond_to_second(&tv_end, &tv_start));
